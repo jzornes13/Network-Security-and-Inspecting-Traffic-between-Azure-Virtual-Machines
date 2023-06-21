@@ -62,6 +62,7 @@ click Azure virtual machine (VM)
 -Repeat the same process for our 2nd vm but using Ubuntu for the operating system.
 
 -again name it whatever you want.
+
 -set the resource group to the same one created for the first virtual machine.
 -keep the size of the vcpus the same as the first machine
     -also use the same location in the first one we used west US 3
