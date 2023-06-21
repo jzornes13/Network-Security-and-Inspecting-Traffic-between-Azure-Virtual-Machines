@@ -57,6 +57,7 @@ click Azure virtual machine (VM)
 </p>
 <p>
 2
+    
 -Repeat the same process for our 2nd vm but using Ubuntu for the operating system.
 -again name it whatever you want.
 -set the resource group to the same one created for the first virtual machine.
@@ -71,6 +72,7 @@ Change authentication to "Password"
 </p>
 <p>
 3
+    
 -make sure the virtual network is the same as the first VM(windows OS)
 -click review/create
 -don't forget to click your accept box bottom left if need be or you will get a fail validation.
@@ -82,6 +84,7 @@ Change authentication to "Password"
 </p>
 <p>
 4
+    
 Connecting to VM1 and installing wireshark
     
 -in Azure go to vm1 and copy the public ip address(little button on the right side next to the numbers)
@@ -110,6 +113,7 @@ Connecting to VM1 and installing wireshark
 </p>
 <p>
 6
+    
 -on vm1 go to whatever internet you have most likely Microsoft edge and search for wireshark
 -select windows intel installer to start downloading
 -click open file or you can go to your downloads file in file explorer.
@@ -134,6 +138,7 @@ Connecting to VM1 and installing wireshark
 </p>
 <p>
 8
+    
 Observe icmp traffic using wireshark
 
 -inside vm1 run wireshark
@@ -166,6 +171,7 @@ Observe icmp traffic using wireshark
 </p>
 <p>
 11
+    
 -go to the search box type in ICMP then enter.
     -you should see them all blank(no icmp activity)
 </p>
@@ -177,6 +183,7 @@ Observe icmp traffic using wireshark
 </p>
 <p>
 12
+    
 -go to vm2 (Ubuntu) overview page in azure copy the private ip address (not the public)
 -return to vm1 press the window button on your keyboard and type cmd or powershell
 -type in Ping -t "private ip address" (the one you just copied)
@@ -190,6 +197,7 @@ Observe icmp traffic using wireshark
 </p>
 <p>
 13
+    
 While that is pinging we will try to deny them and see what happens
 
 </p>
@@ -200,6 +208,7 @@ While that is pinging we will try to deny them and see what happens
 </p>
 <p>
 13a
+    
 -in Azure type network security groups
 -click vm2-nsg
 -go to inbound rules
@@ -222,6 +231,7 @@ While that is pinging we will try to deny them and see what happens
 </p>
 <p>
 14a
+    
 -change the protocol to icmp
 -change the action to deny
 -change the priority to lower than is already set( so it performs the task before any task above it)
@@ -254,6 +264,7 @@ While that is pinging we will try to deny them and see what happens
 </p>
 <p>
 17
+    
 -we saw the denial of packets now lets switch it back but we don't have to delete it we can change action again to allow 
 </p>
 <br />
@@ -264,6 +275,7 @@ While that is pinging we will try to deny them and see what happens
 </p>
 <p>
 18
+    
 -once observed press control+c to stop the ping
 </p>
 <br />
@@ -274,6 +286,7 @@ While that is pinging we will try to deny them and see what happens
 </p>
 <p>
 19
+    
 Observe SSH traffic using wireshark
 
 -in wireshark type SSH or tcp.port==22(more direct) in the search bar and press enter(should be no activity)
