@@ -4,7 +4,7 @@
 </p>
 
 <h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
-In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
+In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. This repository is based on previous work done configuring active directory with azure. <br />
 
 
 
@@ -23,13 +23,15 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- creating 2 virtual machines in azure, both using the same resource group
+    -windows 10 operating system
+    -linux ubuntu operating system
+- using remote desktop (RDP) to install wireshark
+- use wireshark and powershell to make observations( ssh, icmp, dns, http, https)
+- hot to display and flush our dns 
 
 <h2>Actions and Observations</h2>
-
+second text
 <p>
 <img src="https://imgur.com/0QMrH4G.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
