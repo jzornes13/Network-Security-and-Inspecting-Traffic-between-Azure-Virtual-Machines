@@ -24,8 +24,8 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>High-Level Steps</h2>
 
 - creating 2 virtual machines in azure, both using the same resource group
-    -windows 10 operating system
-    -linux ubuntu operating system
+-windows 10 operating system
+-linux ubuntu operating system
 - using remote desktop (RDP) to install wireshark
 - use wireshark and powershell to make observations( ssh, icmp, dns, http, https)
 - hot to display and flush our dns 
