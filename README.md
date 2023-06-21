@@ -308,7 +308,7 @@ While that is pinging we will try to deny them and see what happens
 <p>
 18
     
--once observed press control+c to stop the ping
+-once observed press control+c to stop the ping in powershell
 </p>
 <br />
 
@@ -331,7 +331,10 @@ Observe SSH traffic using wireshark
 </p>
 <p>
 20
--
+
+-in powershell type ssh(this example ssh linuser@10.0.0.5)
+
+-click yes to continue, then it will ask for the password of vm2(there will be no visual so type slow and accurate)
 </p>
 <br />
 
@@ -350,6 +353,12 @@ Observe SSH traffic using wireshark
 </p>
 <p>
 22
+
+-once in vm2 from powershell type id then enter(this gives you the identity of vm2 user)
+
+-observe traffic in wireshark
+
+-type exit to close and return to vm1
 </p>
 <br />
 
@@ -359,6 +368,14 @@ Observe SSH traffic using wireshark
 </p>
 <p>
 23
+
+Observe dhcp,dns and rdp traffic with wireshark
+
+-in wireshark type dhcp and enter(no activity)
+
+-in powershell type ipconfig/renew and enter(you will temporarily lose connection)
+
+-observe new traffic
 </p>
 <br />
 
@@ -368,6 +385,16 @@ Observe SSH traffic using wireshark
 </p>
 <p>
 24
+
+Observe dns traffic
+
+-in wireshark type dns or udp.port==53 (more direct) and enter(should be a lot of traffic)
+
+-look for the green shark fin and press it this restarts the current activity
+
+-in powershell type nslookup wwww.google.com
+
+-observe new activity in wireshark
 </p>
 <br />
 
@@ -386,6 +413,14 @@ Observe SSH traffic using wireshark
 </p>
 <p>
 26
+
+now onto dns traffic
+
+-in wireshark search rdp or tcp.port==3389 (more direct path) and enter
+
+    because we are using remote desktop(rdp) to run the virtual machine everything we do can be visable in wireshark
+
+-observe
 </p>
 <br />
 
@@ -395,6 +430,12 @@ Observe SSH traffic using wireshark
 </p>
 <p>
 27
+
+Display and flush Dns
+
+-in powershell type ipconfig/displaydns then enter
+
+    you should see many websites and thier information(this allows your system easy access to sites already visited so it doesn't have to request new info everytime you go there)
 </p>
 <br />
 
@@ -404,6 +445,14 @@ Observe SSH traffic using wireshark
 </p>
 <p>
 28
+
+-type ipconfig/flushdns and enter(this will delete your cache so every site you visit is "new" to your computer)
+
+-type ipconfig/displaydns to see that everything is cleared
+
+
+
+
 </p>
 <br />
 
