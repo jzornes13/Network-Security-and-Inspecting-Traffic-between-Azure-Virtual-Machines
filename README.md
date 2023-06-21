@@ -24,28 +24,28 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>High-Level Steps</h2>
 
 - creating 2 virtual machines in azure, both using the same resource group
--windows 10 operating system
--linux ubuntu operating system
+- windows 10 operating system
+- linux ubuntu operating system
 - using remote desktop (RDP) to install wireshark
 - use wireshark and powershell to make observations( ssh, icmp, dns, http, https)
-- hot to display and flush our dns 
+- how to display and flush our dns 
 
 <h2>Actions and Observations</h2>
--log into Azure, there are a couple of ways to do everything in Azure, the header or center of the page click create virtual machine.
+- log into Azure, there are a couple of ways to do everything in Azure, the header or center of the page click create virtual machine.
 click Azure virtual machine (VM)
 <p>
 <img src="https://imgur.com/0QMrH4G.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 1
--name your VM anything you want in this case we named it VM1
--resource group is automatically given a name but you can change it.
--change the region to your own, we used west US 3
--choose the size of the server taking into account what you will be using it for. we chose Standard e2 v3- 2vcpus, 16 gib memory
--create a username and password (just remember your credentials!)
--make sure to check your box (bottom left)
--we can go ahead and skip everything else and click review/create
--if you get the go ahead in the form of "validation passed" click create and were good to go, let it set up your machine.
+- name your VM anything you want in this case we named it VM1
+- resource group is automatically given a name but you can change it.
+- change the region to your own, we used west US 3
+- choose the size of the server taking into account what you will be using it for. we chose Standard e2 v3- 2vcpus, 16 gib memory
+- create a username and password (just remember your credentials!)
+- make sure to check your box (bottom left)
+- we can go ahead and skip everything else and click review/create
+- if you get the go ahead in the form of "validation passed" click create and were good to go, let it set up your machine.
 
 </p>
 <br />
