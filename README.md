@@ -31,6 +31,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - how to display and flush our dns 
 
 <h2>Actions and Observations</h2>
+
 - log into Azure, there are a couple of ways to do everything in Azure, the header or center of the page click create virtual machine.
 click Azure virtual machine (VM)
 <p>
@@ -40,7 +41,6 @@ click Azure virtual machine (VM)
 1
     
 - name your VM anything you want in this case we named it VM1
-  
 - resource group is automatically given a name but you can change it.
 - change the region to your own, we used west US 3
 - choose the size of the server taking into account what you will be using it for. we chose Standard e2 v3- 2vcpus, 16 gib memory
