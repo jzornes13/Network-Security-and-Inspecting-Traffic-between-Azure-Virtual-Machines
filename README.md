@@ -38,7 +38,9 @@ click Azure virtual machine (VM)
 </p>
 <p>
 1
+    
 - name your VM anything you want in this case we named it VM1
+  
 - resource group is automatically given a name but you can change it.
 - change the region to your own, we used west US 3
 - choose the size of the server taking into account what you will be using it for. we chose Standard e2 v3- 2vcpus, 16 gib memory
