@@ -80,6 +80,7 @@ Change authentication to "Password"
 3
     
 -make sure the virtual network is the same as the first VM(windows OS)
+
 -click review/create
 -don't forget to click your accept box bottom left if need be or you will get a fail validation.
 </p>
