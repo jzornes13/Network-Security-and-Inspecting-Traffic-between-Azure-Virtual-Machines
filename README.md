@@ -31,12 +31,22 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - hot to display and flush our dns 
 
 <h2>Actions and Observations</h2>
-second text
+-log into Azure, there are a couple of ways to do everything in Azure, the header or center of the page click create virtual machine.
+click Azure virtual machine (VM)
 <p>
 <img src="https://imgur.com/0QMrH4G.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 1
+-name your VM anything you want in this case we named it VM1
+-resource group is automatically given a name but you can change it.
+-change the region to your own, we used west US 3
+-choose the size of the server taking into account what you will be using it for. we chose Standard e2 v3- 2vcpus, 16 gib memory
+-create a username and password (just remember your credentials!)
+-make sure to check your box (bottom left)
+-we can go ahead and skip everything else and click review/create
+-if you get the go ahead in the form of "validation passed" click create and were good to go, let it set up your machine.
+
 </p>
 <br />
 
@@ -45,6 +55,12 @@ second text
 </p>
 <p>
 2
+-Repeat the same process for our 2nd vm but using Ubuntu for the operating system.
+-again name it whatever you want.
+-set the resource group to the same one created for the first virtual machine.
+-keep the size of the vcpus the same as the first machine
+    -also use the same location in the first one we used west US 3
+Change authentication to "Password"
 </p>
 <br />
 
@@ -53,6 +69,9 @@ second text
 </p>
 <p>
 3
+-make sure the virtual network is the same as the first VM(windows OS)
+-click review/create
+-don't forget to click your accept box bottom left if need be or you will get a fail validation.
 </p>
 <br />
 
@@ -61,6 +80,17 @@ second text
 </p>
 <p>
 4
+Connecting to VM1 and installing wireshark
+    
+-in Azure go to vm1 and copy the public ip address(little button on the right side next to the numbers)
+-press windows key button on your keyboard and type "remote desktop connection"(RDP)
+-paste the ip address into the remote desktop and click connect
+-enter user name and password(if it has a username already selected click "show option" and "other" to put in the right credentials as seen below.
+-security prompt will pop up click yes
+-you can disable all privacy settings when asked just turn everything off (not needed for these purposes)
+-hit accept
+
+
 </p>
 <br />
 
@@ -78,6 +108,12 @@ second text
 </p>
 <p>
 6
+-on vm1 go to whatever internet you have most likely Microsoft edge and search for wireshark
+-select windows intel installer to start downloading
+-click open file or you can go to your downloads file in file explorer.
+-the install prompt will appear just keep hitting next until its done.
+-agree with any prompts during this process, leave everything on defult, keep going to install button lights up.
+-click install then finish
 </p>
 <br />
 
@@ -96,6 +132,11 @@ second text
 </p>
 <p>
 8
+Observe icmp traffic using wireshark
+
+-inside vm1 run wireshark
+-there will be a blue shark fin at the top that's the button to press to start capturing traffic
+-you can see activity even though you aren't doing anything
 </p>
 <br />
 
@@ -123,6 +164,8 @@ second text
 </p>
 <p>
 11
+-go to the search box type in ICMP then enter.
+    -you should see them all blank(no icmp activity)
 </p>
 <br />
 
@@ -132,6 +175,10 @@ second text
 </p>
 <p>
 12
+-go to vm2 (Ubuntu) overview page in azure copy the private ip address (not the public)
+-return to vm1 press the window button on your keyboard and type cmd or powershell
+-type in Ping -t "private ip address" (the one you just copied)
+-observe Wireshark packets being sent
 </p>
 <br />
 
@@ -141,6 +188,8 @@ second text
 </p>
 <p>
 13
+While that is pinging we will try to deny them and see what happens
+
 </p>
 <br />
 
@@ -149,6 +198,10 @@ second text
 </p>
 <p>
 13a
+-in Azure type network security groups
+-click vm2-nsg
+-go to inbound rules
+-click add
 </p>
 <br />
 
@@ -167,6 +220,11 @@ second text
 </p>
 <p>
 14a
+-change the protocol to icmp
+-change the action to deny
+-change the priority to lower than is already set( so it performs the task before any task above it)
+-click add
+-return to vm1 to observe the "timed out" status 
 </p>
 <br />
 
@@ -194,6 +252,7 @@ second text
 </p>
 <p>
 17
+-we saw the denial of packets now lets switch it back but we don't have to delete it we can change action again to allow 
 </p>
 <br />
 
@@ -203,6 +262,7 @@ second text
 </p>
 <p>
 18
+-once observed press control+c to stop the ping
 </p>
 <br />
 
@@ -212,6 +272,9 @@ second text
 </p>
 <p>
 19
+Observe SSH traffic using wireshark
+
+-in wireshark type SSH or tcp.port==22(more direct) in the search bar and press enter(should be no activity)
 </p>
 <br />
 
@@ -221,6 +284,7 @@ second text
 </p>
 <p>
 20
+-
 </p>
 <br />
 
