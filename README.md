@@ -82,6 +82,7 @@ Change authentication to "Password"
 -make sure the virtual network is the same as the first VM(windows OS)
 
 -click review/create
+
 -don't forget to click your accept box bottom left if need be or you will get a fail validation.
 </p>
 <br />
@@ -95,11 +96,17 @@ Change authentication to "Password"
 Connecting to VM1 and installing wireshark
     
 -in Azure go to vm1 and copy the public ip address(little button on the right side next to the numbers)
+
 -press windows key button on your keyboard and type "remote desktop connection"(RDP)
+
 -paste the ip address into the remote desktop and click connect
+
 -enter user name and password(if it has a username already selected click "show option" and "other" to put in the right credentials as seen below.
+
 -security prompt will pop up click yes
+
 -you can disable all privacy settings when asked just turn everything off (not needed for these purposes)
+
 -hit accept
 
 
@@ -122,10 +129,15 @@ Connecting to VM1 and installing wireshark
 6
     
 -on vm1 go to whatever internet you have most likely Microsoft edge and search for wireshark
+
 -select windows intel installer to start downloading
+
 -click open file or you can go to your downloads file in file explorer.
+
 -the install prompt will appear just keep hitting next until its done.
+
 -agree with any prompts during this process, leave everything on defult, keep going to install button lights up.
+
 -click install then finish
 </p>
 <br />
@@ -149,7 +161,9 @@ Connecting to VM1 and installing wireshark
 Observe icmp traffic using wireshark
 
 -inside vm1 run wireshark
+
 -there will be a blue shark fin at the top that's the button to press to start capturing traffic
+
 -you can see activity even though you aren't doing anything
 </p>
 <br />
@@ -180,6 +194,7 @@ Observe icmp traffic using wireshark
 11
     
 -go to the search box type in ICMP then enter.
+
     -you should see them all blank(no icmp activity)
 </p>
 <br />
@@ -192,8 +207,11 @@ Observe icmp traffic using wireshark
 12
     
 -go to vm2 (Ubuntu) overview page in azure copy the private ip address (not the public)
+
 -return to vm1 press the window button on your keyboard and type cmd or powershell
+
 -type in Ping -t "private ip address" (the one you just copied)
+
 -observe Wireshark packets being sent
 </p>
 <br />
@@ -217,8 +235,11 @@ While that is pinging we will try to deny them and see what happens
 13a
     
 -in Azure type network security groups
+
 -click vm2-nsg
+
 -go to inbound rules
+
 -click add
 </p>
 <br />
@@ -240,9 +261,13 @@ While that is pinging we will try to deny them and see what happens
 14a
     
 -change the protocol to icmp
+
 -change the action to deny
+
 -change the priority to lower than is already set( so it performs the task before any task above it)
+
 -click add
+
 -return to vm1 to observe the "timed out" status 
 </p>
 <br />
